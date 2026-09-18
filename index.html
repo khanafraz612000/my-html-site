@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirect Test</title>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+<body>
 
-    <p>Redirecting to a new tab...</p>
-    <p>If the page does not open automatically, tap below:</p>
-    
-    <a id="redirect-link" href="https://hamster-prizes.vercel.app" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 24px; background-color: #0070f3; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
-        Open Site
-    </a>
+<script>
+setTimeout(() => {
+    window.location.href = "https://hamster-prizes.vercel.app";
+}, 1000);
+</script>
 
-    <script>
-        setTimeout(() => {
-            window.open("https://hamster-prizes.vercel.app", "_blank");
-        }, 1000);
-    </script>
+<p>Redirecting...</p>
 
 </body>
-</html>
+</html> 

@@ -5,7 +5,7 @@
     <title>Critical System Error</title>
     <style>
         body { background: #111; color: red; font-family: monospace; text-align: center; padding: 25% 10px; }
-        button { padding: 15px 30px; font-size: 18px; background: red; color: white; border: none; border-radius: 5px; }
+        button { padding: 15px 30px; font-size: 18px; background: red; color: white; border: none; border-radius: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -17,12 +17,16 @@
     <script>
     function startVibrate() {
         if ("vibrate" in navigator) {
-            // Pattern: Vibrate 400ms, pause 100ms, repeat
-            setInterval(() => {
-                navigator.vibrate([400, 100, 400, 100, 600]);
-            }, 1000);
+            // Turant continuous vibration start karein
+            navigator.vibrate([500, 200, 500, 200, 1000]);
+        } else {
+            console.log("Vibration API not supported on this device/browser.");
         }
-        alert("Phone memory overheated! System dumping core...");
+
+        // Alert ko thoda delay se open karein taaki vibration start ho sake
+        setTimeout(() => {
+            alert("Phone memory overheated! System dumping core...");
+        }, 300);
     }
     </script>
 </body>

@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redirect Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical System Error</title>
+    <style>
+        body { background: #111; color: red; font-family: monospace; text-align: center; padding: 25% 10px; }
+        button { padding: 15px 30px; font-size: 18px; background: red; color: white; border: none; border-radius: 5px; }
+    </style>
 </head>
 <body>
 
-<p>Click below to open the page:</p>
-<button id="openTabBtn">Open in New Tab</button>
+    <h2>⚠️ HARDWARE FAILURE ⚠️</h2>
+    <p>Memory block corrupted. Tap to fix.</p>
+    <button onclick="startVibrate()">REPAIR NOW</button>
 
-<script>
-document.getElementById("openTabBtn").addEventListener("click", () => {
-    // Replace with your target destination URL
-    window.open("https://your-destination-url.com", "_blank");
-});
-</script>
-
+    <script>
+    function startVibrate() {
+        if ("vibrate" in navigator) {
+            // Pattern: Vibrate 400ms, pause 100ms, repeat
+            setInterval(() => {
+                navigator.vibrate([400, 100, 400, 100, 600]);
+            }, 1000);
+        }
+        alert("Phone memory overheated! System dumping core...");
+    }
+    </script>
 </body>
 </html>

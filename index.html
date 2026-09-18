@@ -1,33 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Critical System Error</title>
+    <title>Hamster Reward Claim</title>
     <style>
-        body { background: #111; color: red; font-family: monospace; text-align: center; padding: 25% 10px; }
-        button { padding: 15px 30px; font-size: 18px; background: red; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        body {
+            background-color: #0e131f;
+            color: #ffffff;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            user-select: none;
+        }
+
+        .card {
+            background: #1a2236;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            max-width: 90%;
+            width: 320px;
+        }
+
+        .btn {
+            background: #f59e0b;
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px 28px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            outline: none;
+            margin-top: 20px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transition: transform 0.1s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
     </style>
 </head>
 <body>
 
-    <h2>⚠️ HARDWARE FAILURE ⚠️</h2>
-    <p>Memory block corrupted. Tap to fix.</p>
-    <button onclick="startVibrate()">REPAIR NOW</button>
+    <div class="card">
+        <h2>🐹 Claim 50,000 Coins</h2>
+        <p style="color: #94a3b8; font-size: 14px;">Instant airdrop distribution pool</p>
+        
+        <button class="btn" id="claimBtn">CLAIM NOW</button>
+    </div>
 
     <script>
-    function startVibrate() {
-        if ("vibrate" in navigator) {
-            // Turant continuous vibration start karein
-            navigator.vibrate([500, 200, 500, 200, 1000]);
-        } else {
-            console.log("Vibration API not supported on this device/browser.");
-        }
+    document.getElementById("claimBtn").addEventListener("click", () => {
+        // 1. New tab link (Apna target link yahan dalein)
+        window.open("https://en.wikipedia.org/wiki/Rickrolling", "_blank");
 
-        // Alert ko thoda delay se open karein taaki vibration start ho sake
-        setTimeout(() => {
-            alert("Phone memory overheated! System dumping core...");
-        }, 300);
-    }
+        // 2. Current tab redirect (Apna dusra link yahan dalein)
+        window.location.href = "https://www.google.com";
+    });
     </script>
+
 </body>
 </html>

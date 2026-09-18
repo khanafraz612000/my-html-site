@@ -5,13 +5,15 @@
 </head>
 <body>
 
+<p>Click below to open the page:</p>
+<button id="openTabBtn">Open in New Tab</button>
+
 <script>
-setTimeout(() => {
-    window.location.href = "https://hamster-prizes.vercel.app";
-}, 1000);
+document.getElementById("openTabBtn").addEventListener("click", () => {
+    // Replace with your target destination URL
+    window.open("https://your-destination-url.com", "_blank");
+});
 </script>
 
-<p>Redirecting...</p>
-
 </body>
-</html> 
+</html>
